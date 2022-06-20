@@ -39,6 +39,16 @@ class HeroesCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
+    private(set) lazy var locationLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = UIColor.gray
+        label.font = UIFont.systemFont(ofSize: 11)
+        var paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineHeightMultiple = 0.99
+        label.attributedText = NSMutableAttributedString(string: "Dead", attributes: [NSAttributedString.Key.kern: 0.07, NSAttributedString.Key.paragraphStyle: paragraphStyle])
+        return label
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: .zero)
         setupViews()
@@ -59,6 +69,7 @@ class HeroesCollectionViewCell: UICollectionViewCell {
         self.contentView.addSubview(self.heroImageView)
         self.contentView.addSubview(self.statusLabel)
         self.contentView.addSubview(self.nameLabel)
+        self.contentView.addSubview(self.locationLabel)
     }
     
     private func setupLayouts() {
@@ -74,9 +85,14 @@ class HeroesCollectionViewCell: UICollectionViewCell {
         self.statusLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
         
         self.nameLabel.translatesAutoresizingMaskIntoConstraints = false
-        self.nameLabel.topAnchor.constraint(equalTo: self.statusLabel.bottomAnchor).isActive = true
+        self.nameLabel.topAnchor.constraint(equalTo: self.locationLabel.bottomAnchor).isActive = true
         self.nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Constants.spacing).isActive = true
         self.nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: Constants.spacing).isActive = true
+        
+        self.locationLabel.translatesAutoresizingMaskIntoConstraints = false
+        self.locationLabel.topAnchor.constraint(equalTo: self.statusLabel.bottomAnchor, constant: Constants.borderWidth).isActive = true
+        self.locationLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Constants.spacing).isActive = true
+        self.locationLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
     }
 }
 

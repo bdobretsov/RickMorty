@@ -67,6 +67,7 @@ extension HeroViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HeroesCollectionViewCell.identifier, for: indexPath) as! HeroesCollectionViewCell
         cell.nameLabel.text = self.heroes[indexPath.row].name
         cell.statusLabel.text = self.heroes[indexPath.row].status
+        cell.locationLabel.text = self.heroes[indexPath.row].location.name
         cell.heroImageView.image = self.heroesImage[indexPath.row]
         return cell
     }
