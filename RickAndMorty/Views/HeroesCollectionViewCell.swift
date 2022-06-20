@@ -72,6 +72,7 @@ class HeroesCollectionViewCell: UICollectionViewCell {
         self.contentView.addSubview(self.locationLabel)
     }
     
+    
     private func setupLayouts() {
         self.heroImageView.translatesAutoresizingMaskIntoConstraints = false
         self.heroImageView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
@@ -101,3 +102,5 @@ extension HeroesCollectionViewCell: ReusableView {
         return String(describing: self)
     }
 }
+
+

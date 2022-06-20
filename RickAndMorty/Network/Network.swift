@@ -9,6 +9,7 @@ class Network {
     private init() {
     }
     
+    
     func getHeroes(completion: @escaping ([Hero]) -> Void) {
         guard let url = URL(string: "https://rickandmortyapi.com/api/character") else { return }
         URLSession.shared.dataTask(with: url) { data, response, error in

@@ -12,6 +12,7 @@ class DetailsInformationCell: UITableViewCell {
         return label
     }()
     
+  
     
     private(set) lazy var subLabel: UILabel = {
         let label = UILabel()

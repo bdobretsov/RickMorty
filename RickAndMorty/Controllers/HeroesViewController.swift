@@ -73,6 +73,7 @@ extension HeroViewController: UICollectionViewDataSource {
     }
 }
 
+
 extension HeroViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let heroDetailsController = HeroDetailsController(hero: self.heroes[indexPath.row])

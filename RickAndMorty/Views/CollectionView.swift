@@ -10,6 +10,7 @@ class CollectionView: UIView {
     @objc func reloadCollectionView() {
         collectionView.reloadData()
     }
+   
     
     private(set) lazy var collectionView: UICollectionView = {
         let viewLayout = UICollectionViewFlowLayout()

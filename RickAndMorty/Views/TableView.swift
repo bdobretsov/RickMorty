@@ -37,6 +37,7 @@ class TableView: UIView {
         setupViews()
         setupLayouts()
     }
+  
     
     private func setupViews() {
         self.addSubview(self.tableView)

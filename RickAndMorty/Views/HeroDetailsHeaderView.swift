@@ -13,6 +13,7 @@ class HeroDetailsHeaderView: UIView {
         return imageView
     }()
     
+    
     private(set) lazy var statusLabel: UILabel = {
         let label = UILabel()
         label.textColor = UIColor.gray
