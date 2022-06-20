@@ -26,23 +26,6 @@ class Network {
         }.resume()
     }
     
-    func getHero(url: String, completion: @escaping (Hero) -> Void) {
-        guard let url = URL(string: url) else { return }
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            if let error = error {
-                print(error)
-                return
-        }
-            guard let json = data else { return }
-            do {
-                let hero = try JSONDecoder().decode(Hero.self, from: json)
-                completion(hero)
-            } catch {
-                print(error.localizedDescription)
-            }
-        }.resume()
-    }
-    
     public func getImage(fromUrl url: URLConvertible, completion: @escaping (UIImage?) -> Void) {
         AF.request(url).responseData { (response) in
             switch response.result {
